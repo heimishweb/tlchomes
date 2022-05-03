@@ -1,0 +1,54 @@
+<center>
+  <img src="https://res.cloudinary.com/dejaksfsk/image/upload/v1606856587/tlchomes_qpxocu.png" />
+
+</center>
+
+<center>
+  <a href="mailto:ajg18@gmail.com">contact us</a>.<br>
+</center>
+
+<center>
+  <h2>Current Step In Rental</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="ca">Listing:</label>
+      <input type="text" id="ca" name="name">
+    </div>
+
+    <div class="form-group">
+      {{!-- <label for="eaten">eaten?</label><br> --}}
+      {{!-- <input type="radio" name="eaten" value="1" checked> eaten!<br> --}}
+      <input class="toMakeAvailable" type="radio" name="eaten" checked="checked" display="none" value="0">
+    </div>
+
+    <button type="submit">Add Rental Milestone</button>
+  </form>
+</center>
+<p></p>
+<hr>
+<h2>Rental Process:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <ul>
+        {{#each burgers}}
+        {{#unless eaten}}
+        {{> burgers/burger-block sleep=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h2>Listings that are gone:</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#if eaten}}
+        {{> burgers/burger-block sleep=false}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
